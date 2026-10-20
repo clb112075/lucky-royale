@@ -20,6 +20,105 @@ footer{border-top:1px solid #ffffff12;padding:22px clamp(16px,4vw,54px);color:va
 @media(max-width:760px){.store-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:470px){.wallet-grid{grid-template-columns:1fr}.store-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:10px}.hero-art{min-height:205px}.games{grid-template-columns:repeat(2,1fr)}.nav .nav-link{display:none}.stats{gap:8px}.stat{padding:12px}.stat b{font-size:17px}}
 @media(max-width:470px){.games{grid-template-columns:1fr}.game-cover{height:130px}.top{padding:13px 14px}.brand{font-size:17px}.pill{padding:8px;font-size:12px}.account-panel .primary{padding:10px}.hero h1{letter-spacing:-1.5px}}
+
+/* Lucky Royale responsive polish — layout/accessibility only; payment and redemption remain disabled. */
+:root{color-scheme:dark;scroll-behavior:smooth}
+html{scroll-padding-top:92px;-webkit-text-size-adjust:100%}
+body{min-width:320px;overflow-x:hidden}
+button,a,input{touch-action:manipulation}
+button:focus-visible,input:focus-visible{outline:3px solid #ffe6a0;outline-offset:3px}
+.primary{transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}
+.primary:active{transform:translateY(1px) scale(.99)}
+.section-head{scroll-margin-top:90px}
+#store,#games{scroll-margin-top:92px}
+.game-card{box-shadow:0 12px 32px #00000014}
+.game-cover{isolation:isolate}
+.wallet-card,.package,.game-card{min-width:0}
+.wallet-card p,.game-info p{overflow-wrap:anywhere}
+.test-banner{display:flex;align-items:flex-start;gap:8px}
+.test-banner:before{content:'🔒';flex:0 0 auto}
+.package button{min-height:42px}
+@media(max-width:760px){
+  .top{padding:12px 16px;gap:10px;flex-wrap:wrap}
+  .brand{font-size:17px;white-space:nowrap}
+  .logo{width:34px;height:34px;border-radius:11px}
+  .nav{width:100%;display:flex;gap:6px;justify-content:space-between;flex-wrap:wrap}
+  .nav .nav-link{display:inline-flex;align-items:center;justify-content:center;padding:9px 10px;background:#ffffff08;color:var(--text);font-size:12px;min-height:40px}
+  .nav .pill{display:inline-flex;align-items:center;justify-content:center;padding:8px 10px;font-size:12px;min-height:38px}
+  .account-panel{gap:4px;margin-left:auto}
+  .account-panel .ghost,.account-panel .primary{padding:9px 10px;font-size:12px;min-height:40px}
+  .account-panel .user-label{display:none}
+  main{padding:18px 16px 42px}
+  .hero{gap:18px;padding:12px 0 22px}
+  .hero h1{font-size:clamp(36px,9vw,54px);line-height:1.02;margin:11px 0 13px}
+  .hero p{font-size:14px;line-height:1.65}
+  .hero-art{min-height:175px;border-radius:22px}
+  .jackpot .big{font-size:64px}
+  .jackpot strong{font-size:18px}
+  .wallet-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:8px 0 24px}
+  .wallet-card{padding:13px;border-radius:15px}
+  .wallet-card .wallet-label{font-size:10px;letter-spacing:.6px;line-height:1.45}
+  .wallet-card .wallet-value{font-size:clamp(20px,5vw,28px);overflow-wrap:anywhere}
+  .wallet-card p{font-size:11px;line-height:1.5}
+  .section-head{align-items:flex-start;margin:24px 0 13px}
+  .section-head h2{font-size:22px}
+  .section-head .eyebrow{font-size:10px;letter-spacing:1px;white-space:nowrap;padding-top:5px}
+  .games{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .game-card{border-radius:17px}
+  .game-cover{height:118px;font-size:58px}
+  .game-info{padding:12px}
+  .game-info h3{font-size:15px}
+  .game-info p{min-height:32px;font-size:11px;line-height:1.45}
+  .game-info button{min-height:44px;padding:10px 8px;font-size:12px}
+  .store-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .package{padding:12px}
+  .package h3{font-size:15px}
+  .package .gc{font-size:16px}
+  .package .price{font-size:14px}
+  footer{padding:20px 16px calc(24px + env(safe-area-inset-bottom));font-size:11px}
+}
+@media(max-width:470px){
+  .top{padding:10px 12px}
+  .nav{justify-content:flex-start;gap:5px}
+  .nav .nav-link{padding:8px 9px}
+  .nav .pill{order:3}
+  .account-panel{margin-left:auto}
+  .hero-art{min-height:155px}
+  .games{grid-template-columns:1fr}
+  .game-card{display:grid;grid-template-columns:108px minmax(0,1fr);align-items:stretch}
+  .game-cover{height:auto;min-height:145px;font-size:52px}
+  .game-cover .tag{top:8px;left:7px;font-size:9px;padding:4px 6px}
+  .game-info{display:flex;flex-direction:column;align-items:stretch;justify-content:center;min-width:0;padding:13px}
+  .game-info p{min-height:0;margin-bottom:12px}
+  .wallet-grid{grid-template-columns:1fr 1fr}
+  .wallet-card{padding:11px}
+  .wallet-card .wallet-value{font-size:21px}
+  .modal-wrap{padding:10px;align-items:flex-end}
+  .modal{padding:17px;border-radius:20px;max-height:88vh;width:100%}
+  #gameModal .modal{padding:13px}
+  .machine{padding:13px;border-radius:17px}
+  .reels{gap:5px;padding:8px;margin:17px auto}
+  .reel{height:70px;font-size:clamp(36px,11vw,52px)}
+  .machine-controls{gap:8px}
+  .spin{min-width:120px;min-height:44px}
+  .bet-control{gap:6px;padding:6px}
+  .bet-control button{width:36px;height:36px}
+  .test-banner{font-size:11px;padding:11px}
+}
+@media(max-width:350px){
+  .brand{font-size:15px;gap:7px}
+  .nav .nav-link,.nav .pill{font-size:11px;padding:7px}
+  .account-panel .ghost,.account-panel .primary{font-size:11px;padding:8px}
+  .wallet-grid{grid-template-columns:1fr}
+  .game-card{grid-template-columns:92px minmax(0,1fr)}
+  .game-cover{min-height:138px}
+  .bet-control small{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  :root{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
 </style>
 </head>
 <body>
